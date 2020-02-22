@@ -1,4 +1,4 @@
-# Windows image file caches
+o# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -25,6 +25,7 @@ dist/*
 nbdist/*
 nbactions.xml
 nb-configuration.xml
+*build*.txt
 
 # Class Files #
 *.class
