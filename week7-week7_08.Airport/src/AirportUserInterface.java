@@ -1,7 +1,6 @@
 
 import java.util.Scanner;
 
-
 public class AirportUserInterface {
 
     private Scanner reader;
@@ -24,11 +23,10 @@ public class AirportUserInterface {
                 + "--------------------"
         );
         flightService();
-        }
-    
+    }
+
     public void airportPanel() {
 
-        OUTER:
         while (true) {
             System.out.println(
                     "Choose operation:\n"
@@ -38,24 +36,22 @@ public class AirportUserInterface {
             );
 
             String command = this.reader.nextLine();
-            switch (command) {
-                case "1":
-                    this.addPlane();
-                    break;
-                case "2":
-                    this.addFlight();
-                    break;
-                case "x":
-                    break OUTER;
+            if (command.equals("1")) {
+                this.addPlane();
+            } else if (command.equals("2")) {
+                this.addFlight();
+            } else if (command.equals("x")) {
+                break;
+            } else {
+                System.out.println("Unknown command.");
+
             }
         }
 
     }
-    
-    
+
     public void flightService() {
 
-        OUTER:
         while (true) {
             System.out.println(
                     "Choose operation:\n"
@@ -65,36 +61,30 @@ public class AirportUserInterface {
                     + "[x] Quit");
 
             String command = this.reader.nextLine();
-            switch (command) {
-                case "1":
-                    this.airport.printPlanes();
-                    break;
-                case "2":
-                    this.airport.printFlights();
-                    break;
-                case "3":
-                    System.out.print("Give plane ID: ");
-                    System.out.println(
-                            this.airport
-                                    .getPlane(this.reader.nextLine())
-                    );
-                    break;
-                case "x":
-                    break OUTER;
+            if (command.equals("1")) {
+                this.airport.printPlanes();
+            } else if (command.equals("2")) {
+                this.airport.printFlights();
+            } else if (command.equals("3")) {
+                System.out.print("Give plane ID: ");
+                System.out.println(this.airport.getPlane(this.reader.nextLine()));
+            } else if (command.equals("x")) {
+                break;
+            } else {
+                System.out.println("Unknown command.");
             }
         }
-
     }
-    
+
     public void addPlane() {
         System.out.print("Give plane ID: ");
         String planeId = this.reader.nextLine();
         System.out.print("Give plane capacity: ");
         int planeCapacity = Integer.parseInt(this.reader.nextLine());
-        
+
         this.airport.addPlane(planeId, planeCapacity);
     }
-    
+
     public void addFlight() {
         System.out.print("Give plane ID: ");
         String planeId = this.reader.nextLine();
@@ -102,10 +92,10 @@ public class AirportUserInterface {
         String departure = this.reader.nextLine();
         System.out.print("Give destination airport code: ");
         String destination = this.reader.nextLine();
-        
+
         this.airport
                 .getPlane(planeId)
-                .addFlight(departure, destination); 
+                .addFlight(departure, destination);
     }
 
 }
