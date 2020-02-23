@@ -8,7 +8,7 @@ public class Container {
     private int currentWeight;
 
     public Container(int maxWeight) {
-        this.suitcases = new ArrayList<>();
+        this.suitcases = new ArrayList<Suitcase>();
         this.maxWeight = maxWeight;
         this.currentWeight = 0;
     }
