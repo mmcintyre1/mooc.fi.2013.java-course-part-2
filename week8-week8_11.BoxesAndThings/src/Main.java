@@ -12,6 +12,7 @@ public class Main {
         box.add( new CD("Wigwam", "Nuclear Nightclub", 1975) );
         box.add( new CD("Rendezvous Park", "Closer to Being Here", 2012) );
 
+        // this will throw a stackoverflow exception
         box.add(box);
         System.out.println(box);
 
