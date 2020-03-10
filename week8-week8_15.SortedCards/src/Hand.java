@@ -37,6 +37,8 @@ public class Hand implements Comparable<Hand> {
     
     @Override
     public int compareTo(Hand otherHand) {
+        // as in the other spot, its easier to just return
+        // the subtraction of the sums
         if (this.getSum() == otherHand.getSum()) {
             return 0;
         } else if (this.getSum() < otherHand.getSum()) {

@@ -38,6 +38,10 @@ public class Card implements Comparable<Card> {
 
     @Override
     public int compareTo(Card card) {
+        // there is an easier way to do this, 
+        // which is just to subtract the suit from the suit 
+        // if the values are equal and the value from the value
+        // if they are not
         if (this.value == card.getValue()) {
             if (this.suit == card.getSuit()) {
                 return 0;
