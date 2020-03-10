@@ -1,7 +1,12 @@
 
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
-        // Write your main program here. Implementing your own classes will be very useful.
+        Jump jump = new Jump();
+        System.out.println(Arrays.toString(jump.getScores()));
+        System.out.println(Integer.toString(jump.getLength()));
+
     }
 }
